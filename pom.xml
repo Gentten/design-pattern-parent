@@ -12,14 +12,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
-        <log4j.version>2.10.0</log4j.version>
-        
+        <lombok.version>1.18.6</lombok.version>
+        <slf4j.version>1.7.25</slf4j.version>
+
     </properties>
 
     <modules>
         <!-- 代理模式 包含jdk代理和cglib-->
         <module>design-pattern-proxy</module>
     </modules>
+
+    <!--    共有依赖-->
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -27,5 +30,26 @@
             <version>${lombok.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>2.11.2</version>
+        </dependency>
     </dependencies>
+    <!--    可选依赖-->
+    <dependencyManagement>
+
+    </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
