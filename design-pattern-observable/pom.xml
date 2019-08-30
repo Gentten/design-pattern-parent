@@ -9,15 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>design-pattern-proxy</artifactId>
+    <artifactId>design-pattern-observable</artifactId>
 
-    <dependencies>
-
-        <dependency>
-            <groupId>cglib</groupId>
-            <artifactId>cglib</artifactId>
-            <version>3.2.6</version>
-        </dependency>
-    </dependencies>
 
 </project>

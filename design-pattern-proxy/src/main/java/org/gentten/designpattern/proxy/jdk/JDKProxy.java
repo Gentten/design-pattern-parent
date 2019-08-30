@@ -33,6 +33,13 @@ public class JDKProxy {
         return (AbstractProxiedSubject) Proxy.newProxyInstance(targetClass.getClassLoader(), targetClass.getInterfaces(), this::rentHouseProxy);
     }
 
+    public AbstractProxiedSubject getAddProxy(AbstractProxiedSubject target) {
+        this.target = target;
+        Class targetClass = target.getClass();
+        //类加载器、接口、 代理人是怎么去执行 即需要实现InvocationHandler 中的invoke方法
+        return (AbstractProxiedSubject) Proxy.newProxyInstance(targetClass.getClassLoader(), targetClass.getInterfaces(), this::addProxy);
+    }
+
     /**
      * 代理人是怎么做的，即怎么代理租房子
      * 参考{@link InvocationHandler}中 invoke 方法
@@ -44,7 +51,7 @@ public class JDKProxy {
      * @throws Throwable 异常
      */
     public Object rentHouseProxy(Object c, Method method, Object[] args) throws Throwable {
-        System.out.println("我是代理，我来代替他执行租房子");
+        System.out.println("我是jdk代理，我来代替他执行租房子");
         System.out.println("在网上进行海选");
         System.out.println("----------------------");
         //调用被代理人的方法
@@ -52,5 +59,11 @@ public class JDKProxy {
         System.out.println("----------------------");
         System.out.println("是否满意");
         return res;
+    }
+
+    public Object addProxy(Object c, Method method, Object[] args) throws Throwable {
+
+        //调用被代理人的方法
+        return method.invoke(target, args);
     }
 }

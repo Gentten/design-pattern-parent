@@ -20,6 +20,9 @@
     <modules>
         <!-- 代理模式 包含jdk代理和cglib-->
         <module>design-pattern-proxy</module>
+        <!--   观察者模式 -->
+        <module>design-pattern-observable</module>
+        <module>design-pattern-factory</module>
     </modules>
 
     <!--    共有依赖-->

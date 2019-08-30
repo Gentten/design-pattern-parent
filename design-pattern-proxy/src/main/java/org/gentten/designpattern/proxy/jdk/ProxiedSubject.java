@@ -2,6 +2,7 @@ package org.gentten.designpattern.proxy.jdk;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 /**
@@ -10,7 +11,7 @@ import lombok.Data;
  * @author : duanzhiqiang
  * @date : 2019-07-28 16:46
  */
-
+@NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class ProxiedSubject implements AbstractProxiedSubject {
